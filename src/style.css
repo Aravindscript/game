@@ -1,0 +1,253 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0b1928;
+}
+
+button {
+  font: inherit;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: none;
+}
+
+.hill-game {
+  width: 100%;
+  max-width: 1400px;
+  min-height: 100vh;
+  margin: auto;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+  background: linear-gradient(150deg, #142a40, #071421);
+  color: white;
+}
+
+.hud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 15px 18px;
+  background: #10243b;
+  border: 1px solid #2b455f;
+  border-radius: 13px 13px 0 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.brand span {
+  color: #b8f14e;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.stats div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #a7bfd4;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.stats b {
+  color: #fff;
+  font-size: 17px;
+  letter-spacing: 0;
+}
+
+.viewport {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid #2b455f;
+  border-top: 0;
+  border-bottom: 0;
+  background: #71d6ff;
+}
+
+.game-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1000 / 460;
+  user-select: none;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 18px;
+  background: #10243b;
+  border: 1px solid #2b455f;
+  border-radius: 0 0 13px 13px;
+}
+
+.instructions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+}
+
+.instructions b {
+  color: #b8f14e;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.instructions span {
+  color: #b7c9d9;
+  font-size: 11px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.buttons button {
+  min-width: 48px;
+  height: 44px;
+  padding: 0 15px;
+  border: 1px solid #45627e;
+  border-radius: 10px;
+  background: #203b56;
+  color: white;
+  font-size: 17px;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    transform 0.15s ease,
+    border-color 0.15s ease;
+  touch-action: none;
+  user-select: none;
+}
+
+.buttons button:hover {
+  background: #315574;
+  border-color: #83b9e5;
+}
+
+.buttons button:active {
+  transform: scale(0.94);
+  background: #426d8f;
+}
+
+.buttons .restart {
+  background: #b8f14e;
+  color: #142a20;
+  border-color: #b8f14e;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.buttons .restart:hover {
+  background: #d2ff83;
+}
+
+@media (min-width: 1200px) {
+  .hill-game {
+    padding: 30px;
+  }
+
+  .game-svg {
+    max-height: 620px;
+  }
+}
+
+@media (max-width: 700px) {
+  .hill-game {
+    min-height: 100dvh;
+    padding: 8px;
+    justify-content: flex-start;
+  }
+
+  .hud {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .brand {
+    font-size: 12px;
+  }
+
+  .stats {
+    flex: 1;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .stats div {
+    font-size: 8px;
+  }
+
+  .stats b {
+    font-size: 13px;
+  }
+
+  .game-svg {
+    width: 100%;
+  }
+
+  .controls {
+    padding: 12px;
+    gap: 15px;
+  }
+
+  .instructions {
+    gap: 8px 12px;
+  }
+
+  .instructions span {
+    font-size: 9px;
+  }
+
+  .buttons {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .buttons button {
+    min-width: 0;
+    height: 46px;
+    padding: 0 5px;
+    font-size: 14px;
+  }
+
+  .buttons .restart {
+    font-size: 10px;
+  }
+}
